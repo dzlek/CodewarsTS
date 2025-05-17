@@ -36,7 +36,7 @@ console.log('started....');
 
 
 //4 https://www.codewars.com/kata/54b724efac3d5402db00065e/train/typescript
-const MORSE_CODE = {
+const MORSE_CODE:{[key:string]:string} = {
   '-.-.--': '!',
   '.-..-.': '"',
   '...-..-': '$',
