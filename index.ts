@@ -21,15 +21,85 @@ console.log('started....');
 
 //3 https://www.codewars.com/kata/517abf86da9663f1d2000003/train/typescript
 
-function toCamelCase(str:string):string{
-  const arr = str.split('-').join(' ').split('_').join(' ').split(' ')
-  const firstWorld = arr[0]
-  const restWorldstoUppercace = arr.slice(1).map(el=>{
-   return el[0].toUpperCase() + el.slice(1) 
-  }
- )
-  return String([firstWorld, ...restWorldstoUppercace].join(''))
+// function toCamelCase(str:string):string{
+//   const arr = str.split('-').join(' ').split('_').join(' ').split(' ')
+//   const firstWorld = arr[0]
+//   const restWorldstoUppercace = arr.slice(1).map(el=>{
+//    return el[0].toUpperCase() + el.slice(1) 
+//   }
+//  )
+//   return String([firstWorld, ...restWorldstoUppercace].join(''))
+// }
+
+
+// console.log(toCamelCase("The-stealth_warrior"));
+
+
+//4 https://www.codewars.com/kata/54b724efac3d5402db00065e/train/typescript
+const MORSE_CODE = {
+  '-.-.--': '!',
+  '.-..-.': '"',
+  '...-..-': '$',
+  '.-...': '&',
+  '.----.': "'",
+  '-.--.': '(',
+  '-.--.-': ')',
+  '.-.-.': '+',
+  '--..--': ',',
+  '-....-': '-',
+  '.-.-.-': '.',
+  '-..-.': '/',
+  '-----': '0',
+  '.----': '1',
+  '..---': '2',
+  '...--': '3',
+  '....-': '4',
+  '.....': '5',
+  '-....': '6',
+  '--...': '7',
+  '---..': '8',
+  '----.': '9',
+  '---...': ':',
+  '-.-.-.': ',',
+  '-...-': '=',
+  '..--..': '?',
+  '.--.-.': '@',
+  '.-': 'A',
+  '-...': 'B',
+  '-.-.': 'C',
+  '-..': 'D',
+  '.': 'E',
+  '..-.': 'F',
+  '--.': 'G',
+  '....': 'H',
+  '..': 'I',
+  '.---': 'J',
+  '-.-': 'K',
+  '.-..': 'L',
+  '--': 'M',
+  '-.': 'N',
+  '---': 'O',
+  '.--.': 'P',
+  '--.-': 'Q',
+  '.-.': 'R',
+  '...': 'S',
+  '-': 'T',
+  '..-': 'U',
+  '...-': 'V',
+  '.--': 'W',
+  '-..-': 'X',
+  '-.--': 'Y',
+  '--..': 'Z',
+  '..--.-': '_',
+  '...---...': 'SOS'
 }
 
+function decodeMorse(morseCode: string): string {
 
-console.log(toCamelCase("The-stealth_warrior"));
+const morseCodeSplittedWords = morseCode.trim().split('   ');
+console.log(morseCodeSplittedWords);
+const res = morseCodeSplittedWords.map(word=>word.split(' ').map(el=>MORSE_CODE[el]).join(''))
+    return res.join(' ');
+}
+
+decodeMorse('.... . -.--   .--- ..- -.. .');
