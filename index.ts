@@ -36,70 +36,159 @@ console.log('started....');
 
 
 //4 https://www.codewars.com/kata/54b724efac3d5402db00065e/train/typescript
-const MORSE_CODE:{[key:string]:string} = {
-  '-.-.--': '!',
-  '.-..-.': '"',
-  '...-..-': '$',
-  '.-...': '&',
-  '.----.': "'",
-  '-.--.': '(',
-  '-.--.-': ')',
-  '.-.-.': '+',
-  '--..--': ',',
-  '-....-': '-',
-  '.-.-.-': '.',
-  '-..-.': '/',
-  '-----': '0',
-  '.----': '1',
-  '..---': '2',
-  '...--': '3',
-  '....-': '4',
-  '.....': '5',
-  '-....': '6',
-  '--...': '7',
-  '---..': '8',
-  '----.': '9',
-  '---...': ':',
-  '-.-.-.': ',',
-  '-...-': '=',
-  '..--..': '?',
-  '.--.-.': '@',
-  '.-': 'A',
-  '-...': 'B',
-  '-.-.': 'C',
-  '-..': 'D',
-  '.': 'E',
-  '..-.': 'F',
-  '--.': 'G',
-  '....': 'H',
-  '..': 'I',
-  '.---': 'J',
-  '-.-': 'K',
-  '.-..': 'L',
-  '--': 'M',
-  '-.': 'N',
-  '---': 'O',
-  '.--.': 'P',
-  '--.-': 'Q',
-  '.-.': 'R',
-  '...': 'S',
-  '-': 'T',
-  '..-': 'U',
-  '...-': 'V',
-  '.--': 'W',
-  '-..-': 'X',
-  '-.--': 'Y',
-  '--..': 'Z',
-  '..--.-': '_',
-  '...---...': 'SOS'
+// const MORSE_CODE:{[key:string]:string} = {
+//   '-.-.--': '!',
+//   '.-..-.': '"',
+//   '...-..-': '$',
+//   '.-...': '&',
+//   '.----.': "'",
+//   '-.--.': '(',
+//   '-.--.-': ')',
+//   '.-.-.': '+',
+//   '--..--': ',',
+//   '-....-': '-',
+//   '.-.-.-': '.',
+//   '-..-.': '/',
+//   '-----': '0',
+//   '.----': '1',
+//   '..---': '2',
+//   '...--': '3',
+//   '....-': '4',
+//   '.....': '5',
+//   '-....': '6',
+//   '--...': '7',
+//   '---..': '8',
+//   '----.': '9',
+//   '---...': ':',
+//   '-.-.-.': ',',
+//   '-...-': '=',
+//   '..--..': '?',
+//   '.--.-.': '@',
+//   '.-': 'A',
+//   '-...': 'B',
+//   '-.-.': 'C',
+//   '-..': 'D',
+//   '.': 'E',
+//   '..-.': 'F',
+//   '--.': 'G',
+//   '....': 'H',
+//   '..': 'I',
+//   '.---': 'J',
+//   '-.-': 'K',
+//   '.-..': 'L',
+//   '--': 'M',
+//   '-.': 'N',
+//   '---': 'O',
+//   '.--.': 'P',
+//   '--.-': 'Q',
+//   '.-.': 'R',
+//   '...': 'S',
+//   '-': 'T',
+//   '..-': 'U',
+//   '...-': 'V',
+//   '.--': 'W',
+//   '-..-': 'X',
+//   '-.--': 'Y',
+//   '--..': 'Z',
+//   '..--.-': '_',
+//   '...---...': 'SOS'
+// }
+
+
+
+
+// const decodeBits = (bits: string) => {
+
+//     return bits.replace('111', '-').replace('000', ' ').replace('1', '.').replace('0', '');
+// };
+
+
+// const decodeMorse = (morseCode: string):string => {
+// const morseCodeSplittedWords = morseCode.trim().split('   ');
+// console.log(morseCodeSplittedWords);
+// const res = morseCodeSplittedWords.map(word=>word.split(' ').map(el=>MORSE_CODE[el]).join(''))
+//     return res.join(' ');
+// }
+
+
+
+// decodeMorse('.... . -.--   .--- ..- -.. .');
+
+//5 https://www.codewars.com/kata/54d81488b981293527000c8f/train/typescript
+
+function sumPairs(ints: number[], s: number): [number, number] | void {  
+
+
+for (let i = 0; i < ints.length; i++) {
+    for (let j = i+1; j < ints.length; j++){
+        if (ints[i]+ints[j] === s) return [ints[i],ints[j]]
+    }
+}
+return undefined;
 }
 
-function decodeMorse(morseCode: string): string {
 
-const morseCodeSplittedWords = morseCode.trim().split('   ');
-console.log(morseCodeSplittedWords);
-const res = morseCodeSplittedWords.map(word=>word.split(' ').map(el=>MORSE_CODE[el]).join(''))
-    return res.join(' ');
-}
+console.log(sumPairs([10, 5, 2, 3, 7, 5], 10));
 
-decodeMorse('.... . -.--   .--- ..- -.. .');
+
+// const obj ={name: 'sdf', sur: '121'}
+
+// class Sam {
+//   constructor(name) {
+//     this.name = name
+//   }
+//   hello() {alert ${this.name}}
+// }
+
+//   const obj2 = new Sam('Dimych')
+
+//   console.log(obj2);
+
+// // console.log(obj.__proto__);
+//ЗАМЫКАНИЕ
+// function greet() {
+//     let count = 0;
+    
+//     function interFunc() {
+//         return count++;
+
+//     }
+// return interFunc
+// }
+
+
+// const first = greet()  // interFunc + свой count
+// const second = greet() // interFunc + свой count
+// const third = greet()
+
+// console.log(first());
+// console.log(first());
+// console.log(first());
+
+// console.log(second());
+// console.log(second());
+// console.log(second());
+// console.log(second());
+// console.log(second());
+
+// console.log(third());
+
+// console.log(second());
+
+
+// const obj ={name: 'sdf', id: '121'}
+
+// console.log(obj.id);
+
+// Object.defineProperties(obj, {
+//   id: {
+//     value: 1,
+//     writable: false,
+//     enumerable: true,
+//     configurable: false
+//   }
+// });
+
+// // obj.id = 'new';
+
+// console.log(obj.id);
