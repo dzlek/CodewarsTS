@@ -1,7 +1,5 @@
 "use strict";
-// Object.defineProperty(exports, "__esModule", { value: true });
-// exports.fromBase64 = fromBase64;
-console.log("started....");
+console.log('started....');
 //1 https://www.codewars.com/kata/515e271a311df0350d00000f/train/typescript
 // const arr1 = [1, 2, 2];
 // function squareSum(arr1: number[]): number {
@@ -19,7 +17,7 @@ console.log("started....");
 //   const arr = str.split('-').join(' ').split('_').join(' ').split(' ')
 //   const firstWorld = arr[0]
 //   const restWorldstoUppercace = arr.slice(1).map(el=>{
-//    return el[0].toUpperCase() + el.slice(1)
+//    return el[0].toUpperCase() + el.slice(1) 
 //   }
 //  )
 //   return String([firstWorld, ...restWorldstoUppercace].join(''))
@@ -94,7 +92,7 @@ console.log("started....");
 // }
 // decodeMorse('.... . -.--   .--- ..- -.. .');
 //5 не решено до конца https://www.codewars.com/kata/54d81488b981293527000c8f/train/typescript
-// function sumPairs(ints: number[], s: number): [number, number] | void {
+// function sumPairs(ints: number[], s: number): [number, number] | void {  
 // for (let i = 0; i < ints.length; i++) {
 //     for (let j = i+1; j < ints.length; j++){
 //         if (ints[i]+ints[j] === s) return [ints[i],ints[j]]
@@ -148,10 +146,10 @@ console.log("started....");
 // console.log(obj.id);
 // 6 https://www.codewars.com/kata/5270f22f862516c686000161/train/typescript
 function toBase64(str) {
-  const res = btoa(str);
-  return res;
+    const res = btoa(str);
+    return res;
 }
 function fromBase64(str) {
-  return atob(str);
+    return atob(str);
 }
-console.log(toBase64("hi"));
+console.log(toBase64('hi'), fromBase64('hi'));

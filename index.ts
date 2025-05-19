@@ -200,8 +200,8 @@ function toBase64(str: string): string {
   return res
 }
 
-export function fromBase64(str: string): string {
+function fromBase64(str: string): string {
  return atob(str)
 }
 
-console.log(toBase64('hi'));
+console.log(toBase64('hi'), fromBase64('hi'));
