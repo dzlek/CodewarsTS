@@ -195,13 +195,27 @@ console.log('started....');
 
 // 6 https://www.codewars.com/kata/5270f22f862516c686000161/train/typescript
 
-function toBase64(str: string): string {
-    const res = btoa(str)
-  return res
-}
+// function toBase64(str: string): string {
+//     const res = btoa(str)
+//   return res
+// }
 
-function fromBase64(str: string): string {
- return atob(str)
-}
+// function fromBase64(str: string): string {
+//  return atob(str)
+// }
 
-console.log(toBase64('hi'), fromBase64('hi'));
+// console.log(toBase64('hi'), fromBase64('hi'));
+
+// console.log(null == undefined);
+
+function validISBN10(isbn: string): boolean {
+  if (!/^\d{9}[\dXx]$/.test(isbn)) return false;
+
+  const sum = [...isbn].reduce((acc, char, i) => {
+    const digit = (char === 'X' || char === 'x') ? 10 : Number(char);
+    return acc + digit * (i + 1);
+  }, 0);
+
+  return sum % 11 === 0;
+}
+console.log(validISBN10('1112223339'));
