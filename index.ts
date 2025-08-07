@@ -1,4 +1,4 @@
-console.log('started....');
+console.log("started....");
 
 //1 https://www.codewars.com/kata/515e271a311df0350d00000f/train/typescript
 
@@ -25,15 +25,13 @@ console.log('started....');
 //   const arr = str.split('-').join(' ').split('_').join(' ').split(' ')
 //   const firstWorld = arr[0]
 //   const restWorldstoUppercace = arr.slice(1).map(el=>{
-//    return el[0].toUpperCase() + el.slice(1) 
+//    return el[0].toUpperCase() + el.slice(1)
 //   }
 //  )
 //   return String([firstWorld, ...restWorldstoUppercace].join(''))
 // }
 
-
 // console.log(toCamelCase("The-stealth_warrior"));
-
 
 //4 https://www.codewars.com/kata/54b724efac3d5402db00065e/train/typescript
 // const MORSE_CODE:{[key:string]:string} = {
@@ -94,14 +92,10 @@ console.log('started....');
 //   '...---...': 'SOS'
 // }
 
-
-
-
 // const decodeBits = (bits: string) => {
 
 //     return bits.replace('111', '-').replace('000', ' ').replace('1', '.').replace('0', '');
 // };
-
 
 // const decodeMorse = (morseCode: string):string => {
 // const morseCodeSplittedWords = morseCode.trim().split('   ');
@@ -110,14 +104,11 @@ console.log('started....');
 //     return res.join(' ');
 // }
 
-
-
 // decodeMorse('.... . -.--   .--- ..- -.. .');
 
 //5 не решено до конца https://www.codewars.com/kata/54d81488b981293527000c8f/train/typescript
 
-// function sumPairs(ints: number[], s: number): [number, number] | void {  
-
+// function sumPairs(ints: number[], s: number): [number, number] | void {
 
 // for (let i = 0; i < ints.length; i++) {
 //     for (let j = i+1; j < ints.length; j++){
@@ -127,9 +118,7 @@ console.log('started....');
 // return undefined;
 // }
 
-
 // console.log(sumPairs([10, 5, 2, 3, 7, 5], 10));
-
 
 // const obj ={name: 'sdf', sur: '121'}
 
@@ -148,14 +137,13 @@ console.log('started....');
 //ЗАМЫКАНИЕ
 // function greet() {
 //     let count = 0;
-    
+
 //     function interFunc() {
 //         return count++;
 
 //     }
 // return interFunc
 // }
-
 
 // const first = greet()  // interFunc + свой count
 // const second = greet() // interFunc + свой count
@@ -174,7 +162,6 @@ console.log('started....');
 // console.log(third());
 
 // console.log(second());
-
 
 // const obj ={name: 'sdf', id: '121'}
 
@@ -208,14 +195,14 @@ console.log('started....');
 
 // console.log(null == undefined);
 
-function validISBN10(isbn: string): boolean {
-  if (!/^\d{9}[\dXx]$/.test(isbn)) return false;
+// function validISBN10(isbn: string): boolean {
+//   if (!/^\d{9}[\dXx]$/.test(isbn)) return false;
 
-  const sum = [...isbn].reduce((acc, char, i) => {
-    const digit = (char === 'X' || char === 'x') ? 10 : Number(char);
-    return acc + digit * (i + 1);
-  }, 0);
+//   const sum = [...isbn].reduce((acc, char, i) => {
+//     const digit = (char === 'X' || char === 'x') ? 10 : Number(char);
+//     return acc + digit * (i + 1);
+//   }, 0);
 
-  return sum % 11 === 0;
-}
-console.log(validISBN10('1112223339'));
+//   return sum % 11 === 0;
+// }
+// console.log(validISBN10('1112223339'));

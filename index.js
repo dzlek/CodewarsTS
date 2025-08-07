@@ -1,5 +1,5 @@
 "use strict";
-console.log('started....');
+console.log("started....");
 //1 https://www.codewars.com/kata/515e271a311df0350d00000f/train/typescript
 // const arr1 = [1, 2, 2];
 // function squareSum(arr1: number[]): number {
@@ -17,7 +17,7 @@ console.log('started....');
 //   const arr = str.split('-').join(' ').split('_').join(' ').split(' ')
 //   const firstWorld = arr[0]
 //   const restWorldstoUppercace = arr.slice(1).map(el=>{
-//    return el[0].toUpperCase() + el.slice(1) 
+//    return el[0].toUpperCase() + el.slice(1)
 //   }
 //  )
 //   return String([firstWorld, ...restWorldstoUppercace].join(''))
@@ -92,7 +92,7 @@ console.log('started....');
 // }
 // decodeMorse('.... . -.--   .--- ..- -.. .');
 //5 не решено до конца https://www.codewars.com/kata/54d81488b981293527000c8f/train/typescript
-// function sumPairs(ints: number[], s: number): [number, number] | void {  
+// function sumPairs(ints: number[], s: number): [number, number] | void {
 // for (let i = 0; i < ints.length; i++) {
 //     for (let j = i+1; j < ints.length; j++){
 //         if (ints[i]+ints[j] === s) return [ints[i],ints[j]]
@@ -154,13 +154,12 @@ console.log('started....');
 // }
 // console.log(toBase64('hi'), fromBase64('hi'));
 // console.log(null == undefined);
-function validISBN10(isbn) {
-    if (!/^\d{9}[\dXx]$/.test(isbn))
-        return false;
-    const sum = [...isbn].reduce((acc, char, i) => {
-        const digit = (char === 'X' || char === 'x') ? 10 : Number(char);
-        return acc + digit * (i + 1);
-    }, 0);
-    return sum % 11 === 0;
-}
-console.log(validISBN10('1112223339'));
+// function validISBN10(isbn: string): boolean {
+//   if (!/^\d{9}[\dXx]$/.test(isbn)) return false;
+//   const sum = [...isbn].reduce((acc, char, i) => {
+//     const digit = (char === 'X' || char === 'x') ? 10 : Number(char);
+//     return acc + digit * (i + 1);
+//   }, 0);
+//   return sum % 11 === 0;
+// }
+// console.log(validISBN10('1112223339'));
