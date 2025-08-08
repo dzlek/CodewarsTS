@@ -163,3 +163,14 @@ console.log("started....");
 //   return sum % 11 === 0;
 // }
 // console.log(validISBN10('1112223339'));
+const names = ["Alice", "Bob", "John"];
+// Определение типов на основе контекста вызова функции
+names.forEach(function (s) {
+    console.log(s.toUpperCase());
+    // Property 'toUppercase' does not exist on type 'string'. Did you mean 'toUpperCase'? Свойства 'toUppercase' не существует в типе 'string'. Вы имели ввиду 'toUpperCase'?
+});
+// Определение типов на основе контекста также работает для стрелочных функций
+names.forEach((s) => {
+    console.log(s.toUpperCase());
+    // Property 'toUppercase' does not exist on type 'string'. Did you mean 'toUpperCase'?
+});

@@ -206,3 +206,41 @@ console.log("started....");
 //   return sum % 11 === 0;
 // }
 // console.log(validISBN10('1112223339'));
+
+// interface greaterProp {
+//   (a: string): void;
+// }
+
+// function greater(fn: greaterProp) {
+//   fn("Hi");
+// }
+
+// function great(v: string) {
+//   return !!v;
+// }
+
+// // greater(great);
+
+// function filter1<Type>(arr: Type[], func: (arg: Type) => boolean): Type[] {
+//   return arr.filter(func);
+// }
+
+// function filter2<Type, Func extends (arg: Type) => boolean>(
+//   arr: Type[],
+//   func: Func
+// ): Type[] {
+//   return arr.filter(func);
+// }
+
+// const result = filter1(["1", "5", "3"], great);
+// console.log(result);
+
+function makeDate(timestamp: number): Date; //function overload(сигнатура перегрузки)
+function makeDate(d: number, m: number, y: number): Date; //function overload(сигнатура перегрузки)
+function makeDate(dOrTimestamp: number, m?: number, y?: number): Date {
+  if (m !== undefined && y !== undefined) {
+    return new Date(y, m, dOrTimestamp);
+  } else {
+    return new Date(dOrTimestamp);
+  }
+}
