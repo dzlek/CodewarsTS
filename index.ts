@@ -235,12 +235,54 @@ console.log("started....");
 // const result = filter1(["1", "5", "3"], great);
 // console.log(result);
 
-function makeDate(timestamp: number): Date; //function overload(сигнатура перегрузки)
-function makeDate(d: number, m: number, y: number): Date; //function overload(сигнатура перегрузки)
-function makeDate(dOrTimestamp: number, m?: number, y?: number): Date {
-  if (m !== undefined && y !== undefined) {
-    return new Date(y, m, dOrTimestamp);
-  } else {
-    return new Date(dOrTimestamp);
-  }
+// function makeDate(timestamp: number): Date; //function overload(сигнатура перегрузки)
+// function makeDate(d: number, m: number, y: number): Date; //function overload(сигнатура перегрузки)
+// function makeDate(dOrTimestamp: number, m?: number, y?: number): Date {
+//   if (m !== undefined && y !== undefined) {
+//     return new Date(y, m, dOrTimestamp);
+//   } else {
+//     return new Date(dOrTimestamp);
+//   }
+// }
+
+// class Animal {
+//   type: string;
+
+//   constructor(type: string) {
+//     this.type = type;
+//   }
+
+//   speak(): void {
+//     console.log(`${this.type} говорит!`);
+//   }
+// }
+// console.log(Animal.prototype);
+// // Добавим метод в прототип
+// Animal.prototype.run = function () {
+//   console.log(`${this.type} бежит!`);
+// };
+// // Чтобы TS не ругался, надо расширить тип класса
+// interface Animal {
+//   run(): void;
+// }
+
+// // Используем
+// const cat = new Animal("Кошка");
+// console.log(Animal.prototype);
+// cat.speak(); // Кошка говорит!
+// cat.run(); // Кошка бежит!
+
+interface Person {
+  name: string;
+  speak: (text: string) => string;
 }
+
+const user = {
+  name: "Dee",
+  speak: () => console.log("Hi"),
+};
+
+const translator = function ({ name, speak }: Person) {
+  user.name = name;
+  user.speak();
+};
